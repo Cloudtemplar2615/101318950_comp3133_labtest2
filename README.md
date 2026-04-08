@@ -1,5 +1,5 @@
 ## WORKING VERCEL LINK TO WORK 
-[![Uploading image.png…]()](https://101318950-comp3133-labtest2.vercel.app/)
+[https://101318950-comp3133-labtest2.vercel.app/](https://101318950-comp3133-labtest2.vercel.app/)
 
 
 # 101318950 Lab test 2 B
