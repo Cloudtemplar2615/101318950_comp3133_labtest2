@@ -1,0 +1,92 @@
+.top-actions {
+  margin-bottom: 20px;
+}
+
+.details-card {
+  background: linear-gradient(180deg, #171b24 0%, #0f1218 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.details-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.image-col img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+  background: #e9e9e9;
+}
+
+.heading-block {
+  margin-bottom: 18px;
+}
+
+.heading-block h1 {
+  margin: 0 0 6px;
+  color: #ff8a65;
+  font-size: 34px;
+}
+
+.sub-line {
+  margin: 0;
+  font-size: 16px;
+  color: #b9c3d0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #8ab4f8;
+  font-weight: 700;
+}
+
+.state-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.error-box {
+  color: #b00020;
+}
+
+@media (max-width: 768px) {
+  .details-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .image-col img {
+    height: 380px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}

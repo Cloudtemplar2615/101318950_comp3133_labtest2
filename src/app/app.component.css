@@ -1,0 +1,12 @@
+.main-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+.page-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 34px 20px 48px;
+}

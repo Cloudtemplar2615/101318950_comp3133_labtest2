@@ -1,0 +1,69 @@
+<div class="top-actions">
+  <a mat-stroked-button color="primary" routerLink="/">Back to Directory</a>
+</div>
+
+@if (loading()) {
+  <div class="state-box">
+    <mat-spinner diameter="44"></mat-spinner>
+    <p>Loading character details...</p>
+  </div>
+} @else if (errorMessage()) {
+  <div class="state-box error-box">
+    <p>{{ errorMessage() }}</p>
+  </div>
+} @else if (character()) {
+  <mat-card class="details-card">
+    <div class="details-layout">
+      <div class="image-col">
+        <img
+          [src]="character()!.image || 'https://placehold.co/350x500?text=No+Image'"
+          [alt]="character()!.name"
+        />
+      </div>
+
+      <div class="info-col">
+        <div class="heading-block">
+          <h1>{{ character()!.name }}</h1>
+          <p class="sub-line">{{ character()!.house || 'No House' }}</p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">Actor</span>
+            <span>{{ character()!.actor || 'Unknown' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Species</span>
+            <span>{{ character()!.species || 'Unknown' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Wizard</span>
+            <span>{{ character()!.wizard ? 'true' : 'false' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Ancestry</span>
+            <span>{{ character()!.ancestry || 'Unknown' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Wand Wood</span>
+            <span>{{ character()!.wand?.wood || 'Unknown' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Wand Core</span>
+            <span>{{ character()!.wand?.core || 'Unknown' }}</span>
+          </div>
+
+          <div class="info-item">
+            <span class="label">Wand Length</span>
+            <span>{{ character()!.wand?.length ?? 'Unknown' }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+}

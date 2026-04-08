@@ -1,0 +1,86 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 24px;
+}
+
+.character-card {
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1b1f2a 0%, #12151d 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+}
+
+.character-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+  background: #e9e9e9;
+}
+
+.character-card h3 {
+  margin: 14px 0 8px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.actor-text,
+.species-text {
+  color: #d7dce5;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.house {
+  font-weight: 700;
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+
+.gryffindor {
+  color: #ff5c57;
+}
+
+.slytherin {
+  color: #5ad67d;
+}
+
+.hufflepuff {
+  color: #ffd54f;
+}
+
+.ravenclaw {
+  color: #64b5f6;
+}
+
+.nohouse {
+  color: #c7c7c7;
+}
+
+mat-card-content {
+  padding-bottom: 4px;
+}
+
+mat-card-actions {
+  padding: 0 16px 18px 16px;
+}
+
+.state-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.error-box {
+  color: #b00020;
+}

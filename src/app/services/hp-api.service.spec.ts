@@ -1,16 +1,16 @@
-import { TestBed } from '@angular/core/testing';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Character } from '../models/character';
 
-import { HpApiService } from './hp-api.service';
+@Injectable({
+  providedIn: 'root'
+})
+export class HpApiService {
+  private http = inject(HttpClient);
+  private baseUrl = 'https://hp-api.onrender.com/api';
 
-describe('HpApiService', () => {
-  let service: HpApiService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(HpApiService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+  getCharacters(): Observable<Character[]> {
+    return this.http.get<Character[]>(`${this.baseUrl}/characters`);
+  }
+}

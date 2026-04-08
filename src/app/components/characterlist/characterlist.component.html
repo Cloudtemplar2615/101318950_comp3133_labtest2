@@ -1,0 +1,58 @@
+<app-characterfilter (houseChanged)="onHouseChanged($event)"></app-characterfilter>
+
+@if (loading()) {
+  <div class="state-box">
+    <mat-spinner diameter="44"></mat-spinner>
+    <p>Loading characters...</p>
+  </div>
+} @else if (errorMessage()) {
+  <div class="state-box error-box">
+    <p>{{ errorMessage() }}</p>
+  </div>
+} @else {
+  <div class="cards-grid">
+    @for (character of displayedCharacters(); track character.id) {
+      <mat-card class="character-card">
+        <img
+          mat-card-image
+          [src]="character.image || 'https://placehold.co/300x420?text=No+Image'"
+          [alt]="character.name"
+        />
+
+        <mat-card-content>
+          <h3>{{ character.name }}</h3>
+          <p class="actor-text">Actor: {{ character.actor || 'Unknown' }}</p>
+          <p class="species-text">Species: {{ character.species || 'Unknown' }}</p>
+
+          @switch (character.house) {
+            @case ('Gryffindor') {
+              <p class="house gryffindor">Gryffindor</p>
+            }
+            @case ('Slytherin') {
+              <p class="house slytherin">Slytherin</p>
+            }
+            @case ('Hufflepuff') {
+              <p class="house hufflepuff">Hufflepuff</p>
+            }
+            @case ('Ravenclaw') {
+              <p class="house ravenclaw">Ravenclaw</p>
+            }
+            @default {
+              <p class="house nohouse">No House</p>
+            }
+          }
+        </mat-card-content>
+
+        <mat-card-actions>
+          <a mat-raised-button color="accent" [routerLink]="['/character', character.id]">
+            See Profile
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    } @empty {
+      <div class="state-box">
+        <p>No characters found.</p>
+      </div>
+    }
+  </div>
+}
