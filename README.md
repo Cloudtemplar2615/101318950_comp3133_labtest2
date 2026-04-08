@@ -1,8 +1,7 @@
 # 101318950 Lab test 2 B
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.23.
-# APP description 
-list all harry potter characters inluding ones who did not appear one film some are only mentioned or mentioned in the book series
+
 ## Development server
 
 To start a local development server, run:
