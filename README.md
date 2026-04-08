@@ -1,3 +1,6 @@
+## WORKING VERCEL LINK TO WORK 
+https://vercel.com/freds-projects-46eefddd/101318950-comp3133-labtest2
+
 # 101318950 Lab test 2 B
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.23.
